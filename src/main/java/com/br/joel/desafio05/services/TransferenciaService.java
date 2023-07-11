@@ -15,35 +15,49 @@ public class TransferenciaService implements TransferenciaServiceImpl {
     @Autowired
     private TransferenciaRepository transferenciaRepository;
 
+
+    // Busca todas as transferencias realizadas  que estejam listadas na base de dados
+
     @Override
     public List<Transferencia> listar() {
-        // TODO Auto-generated method stub
-      
 
         return transferenciaRepository.findAll();
     }
 
+
+    // Busca todas as transferencias realizados por uma conta.
+
     @Override
     public List<Transferencia> idConta(Long conta) {
-        // TODO Auto-generated method stub
+        
         return transferenciaRepository.findByConta(conta);
     }
 
+
+    // Busca todas as transferencias realizados por um operador
+
     @Override
     public List<Transferencia> nomeOperador(String operador) {
-        // TODO Auto-generated method stub
+        if(operador.equals("null") ) {
+            return null;
+        }
+        
         return transferenciaRepository.findByOperador(operador);
     }
 
+    //Busca todas as transferencias realizados por um periodo de tempo
+
     @Override
     public List<Transferencia> periodo(LocalDateTime inicio, LocalDateTime fim) {
-        // TODO Auto-generated method stub
+        
        return transferenciaRepository.findByDateTime(inicio, fim);
     }
 
+    //Busca todas as transferencias realizados por um operador e um periodo de tempo
+
     @Override
     public List<Transferencia> nomeOperadorAndPeriodo(String operador, LocalDateTime inicio, LocalDateTime fim) {
-        // TODO Auto-generated method stub
+        
     
         return transferenciaRepository.findByOperadorDateTime(operador, inicio, fim);
     }
