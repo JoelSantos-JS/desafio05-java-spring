@@ -44,7 +44,7 @@ public class TransferenciaImpl {
 
 
                 if(inicio !=null && fim !=null) {
-                    transferencias = transferencias.stream().filter(t -> t.getOperationDate().equals(inicio) && t.getOperationDate().equals(fim)).collect(Collectors.toList());
+                    transferencias = transferencias.stream().filter(t -> t.getOperationDate().equals(inicio) || t.getOperationDate().equals(fim)).collect(Collectors.toList());
 
 
 

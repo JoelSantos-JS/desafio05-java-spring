@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name = "conta_bancaria")
+@Table(name = "conta")
 public class ContaBancaria {
 
 
